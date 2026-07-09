@@ -1,0 +1,113 @@
+Adarsh Vitthal More
+Available for work
+
+Hello! I'm Adarsh 
+I'm developing Creative & Interactive webapps 🚀 
+I am a passionate Full Stack Developer with a strong foundation in web development and blockchain technology. I specialize in building robust web applications using React.js, Next.js, and Node.js, while also having experience in blockchain development with Solidity. I'm focused on creating efficient, scalable solutions and staying current with emerging technologies in both web development and blockchain spaces.
+
+gmail
+github
+linkedin
+Work Experience
+Acadeeasy
+SDE Intern
+Feb 2025 - Present
+
+• Working on a company product, developing 10+ dynamic pages using Next.js for scalability and performance.
+• Transformed 50+ Figma designs into a fully responsive UI, optimizing performance with Redux & TypeScript for 40% faster rendering.
+• Seamless API Integrations – Connected front end with 20+ API endpoints, ensuring real-time data synchronization.
+Loop Of Infinity
+Frontend and Blockchain Developer
+April 2023 - October 2024
+
+• Developed and launched a fully responsive company introduction website using React and GSAP
+• Improved user engagement through dynamic animations and seamless user interface design, and troubleshooting many bugs.
+• Engineered and audited 5+ smart contracts with Solidity and Hardhat for the pre-IEO sale of LOI Token on Polygon
+• Created a Token Launch , DEX and Staking platform for the LOI Token
+Fliperb Lifestyle
+Full Stack Developer Intern
+December 2023 - January 2024
+
+• Led a team of 5 to build a responsive, SEO-optimized e-commerce platform with the MERN stack
+• integrating Stripe payments and referral features, driving increase in user retention.
+• Containerized the project using Docker and deployed it on AWS
+Key Projects
+
+Relocate AI
+A smart relocation assistant analyzing users Timeline.json and using Flask, MongoDB, and React, recommending homes based on budget and lifestyle while integrating AI-driven local discovery and community engagement.
+
+ArtQuire
+A decentralized NFT marketplace powered by Solidity and Hardhat, enabling secure blockchain transactions, IPFS-based asset storage, and real-time artist collaboration with optimized smart contracts.
+
+
+VaanShika
+A family tree management platform with real-time collaboration, secure communication, shared event calendars, and AWS S3 integration for reliable document and photo storage.
+
+Health on Chain
+A blockchain-based health records system leveraging Solidity, IPFS, and Hardhat to provide hospitals with secure, private, and transparent patient data access.
+
+Languages, Frameworks & Tools
+Languages
+JavaScript
+JavaScript
+TypeScript
+TypeScript
+Python
+Python
+C
+C
+Solidity
+Solidity
+HTML
+HTML
+CSS
+CSS
+Frontend
+React.js
+React.js
+Next.js
+Next.js
+Redux
+Redux
+Tailwind CSS
+Tailwind CSS
+Material UI
+Material UI
+G
+GSAP
+Backend
+Node.js
+Node.js
+Express.js
+Express.js
+Django
+Django
+MongoDB
+MongoDB
+REST APIs
+REST APIs
+Blockchain
+Solidity
+Solidity
+H
+Hardhat
+W
+Web3.js
+E
+Ethers.js
+Tools
+Docker
+Docker
+AWS
+AWS
+Git
+Git
+CI/CD
+CI/CD
+Postman
+Postman
+Interested ?
+Let's Get In Touch !
+I'm really active on Linkedin you can also stay in touch with me on Twitter. also some experiments on GitHub.
+
+Download Resume

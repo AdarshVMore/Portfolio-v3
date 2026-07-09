@@ -1,0 +1,182 @@
+%-------------------------
+% Resume in Latex
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%-----------HEADER-----------
+\begin{center}
+    \textbf{\Huge \scshape Adarsh V. More} \\ \vspace{4pt}
+    \small +91 90676 84680 $|$
+    \href{mailto:adarshv.more18@gmail.com}{\underline{adarshv.more18@gmail.com}} $|$
+    \href{https://linkedin.com/in/adarsh-v-more}{\underline{linkedin.com/in/adarsh-v-more}} $|$
+    \href{https://github.com/AdarshVMore}{\underline{github.com/AdarshVMore}} $|$
+    \href{https://adarshmore.netlify.app}{\underline{Portfolio}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Mumbai}{India}
+      {B.Tech in Computer Engineering}{June 2021 -- June 2025}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Ellenox}{June 2025 -- March 2026}
+      {Fullstack Developer}{}
+      \resumeItemListStart
+        \resumeItem{Led the \textbf{architecture and delivery} of \textbf{Capturely}, a real-time virtual photoshoot platform for multiple concurrent sessions, built on \textbf{React Native (Expo)}, LiveKit (WebRTC), \textbf{Tailwind CSS, Zustand} }
+        \resumeItem{Delivered complex frontend modules for Therhappi, a hospital/therapy management system, developing multi-page patient and therapist workflows for appointments, patient records, payment gateway, online Therhappi and therapist operations with \textbf{React.js, Tailwind CSS, Redux Toolkit, and optimized UI performance} }
+      \resumeItemListEnd
+
+\resumeSubheading
+  {AcadeEasy}{Feb 2025 -- April 2025}
+  {Fullstack Developer Intern}{}
+  \resumeItemListStart
+    \resumeItem{Drove the \textbf{frontend infrastructure build} of an \textbf{AI-powered professional networking platform}; worked on AI systems for \textbf{profile relevance scoring}, and improving load times by \textbf{35\%}.}
+    
+    \resumeItem{Redesigned the backend as a \textbf{microservice architecture} with isolated \textbf{auth, content, and analytics services}; containerized and shipped via \textbf{Docker + GitHub Actions}, reducing deployment overhead by \textbf{50\%}.}
+  \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Loop of Infinity}{April 2023 -- October 2024}
+      {Frontend and Blockchain Developer Intern}{}
+      \resumeItemListStart
+        \resumeItem{\textbf{Architected and shipped the DeFi product}, onboarded \textbf{1,000+ users}, processed live token sales generating \textbf{\$20K+ in revenue}, and drove active staking on Polygon using \textbf{React, Next.js, Node.js, GSAP}.}
+        \resumeItem{Developed Staking, Vesting, Token Sale, liquidity pool Dashboards, and \textbf{Solidity} smart contracts (Staking, Vesting, Token Sale) via Ethers.js.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+  
+\resumeProjectHeading
+{\textbf{ReviewPilot (AI Code Reviewer)} $|$ \emph{Next Js, Tailwind, Node.js, TypeScript}}{\href{http://custom-ai-code-reviewer.vercel.app/}{\underline{Live}} \textbar{} \href{https://github.com/AdarshVMore/AI-Code-Reviewer}{\underline{GitHub}}}
+\resumeItemListStart
+    \resumeItem{Built an \textbf{AI-powered GitHub code reviewer} that automatically analyzes pull requests and posts \textbf {review comments} for bugs, code quality, performance, and maintainability improvements.}
+
+    
+    \resumeItem{Implemented \textbf{event-driven arch., webhooks, and asynchronous workers} to process PR events, parse changed files, and generate intelligent review feedback at scale using \textbf{LLM APIs and RAG} .}
+    
+    \resumeItem{Designed a \textbf{review dashboard} with repository management, containerized services using \textbf{Docker} .}
+\resumeItemListEnd
+
+
+    \resumeProjectHeading
+      {\textbf{Relocate AI} $|$ \emph{Node, React, MongoDB, Firebase, Gemini API} }{\href{https://www.linkedin.com/feed/update/urn:li:activity:7334528379884310529/}{\underline{Live}} \textbar{} \href{https://github.com/AdarshVMore/RelocateAI}{\underline{GitHub}}}
+      \resumeItemListStart \resumeItem{Built an \textbf{AI-driven relocation platform} to recommend neighborhoods, homes, and nearby places based on \textbf{budget, commute, lifestyle, and social preferences}.} \resumeItem{Developed a \textbf{Flask + MongoDB backend} for personalized recommendations, user profiles, and location intelligence; built an \textbf{interactive React map UI} for neighborhood visualization and place discovery.} \resumeItem{Implemented a \textbf{Smart Relocation Bot} using \textbf{Firebase, Gemini API, and React} to help users discover local communities, events, and meetups, with \textbf{authentication and real-time sync} across devices.} \resumeItemListEnd
+
+
+  \resumeSubHeadingListEnd
+
+%-----------AWARDS & LEADERSHIP-----------
+\section{Awards, Hackathons \& Leadership}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Winner} -- CodeBits 3.0 Hackathon (2025) $|$ \href{https://github.com/AdarshVMore/RelocateAI}{\underline{GitHub}} \hfill \textit{Relocate AI -- AI relocation platform} \\
+      \vspace{1.5pt}
+      \textbf{Winner} -- EthGlobal HackFS $|$ \href{https://www.linkedin.com/feed/update/urn:li:activity:7334528379884310529/}{\underline{Showcase}} \textbar{} \href{https://github.com/AdarshVMore/ArtAquire-SocialMedia-DApp}{\underline{GitHub}} \hfill \textit{ArtQuire -- NFT marketplace on Polygon} \\
+      \vspace{1.5pt}
+      \textbf{Finalist} -- Web3 INIT $|$ \href{https://github.com/AdarshVMore/hospital_dapp}{\underline{GitHub}} \hfill \textit{Hospital D-App -- blockchain medical records} \\
+      \vspace{1.5pt}
+      \textbf{President}, ASCEE Club (June 2023 -- June 2024) \\ \textbf{Lead}, Google Developer Students Club (June 2023 -- June 2024)
+    }}
+ \end{itemize}
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Core}{: React.js, Next.js, React Native, Node.js,  TypeScript, Tailwind CSS, Zustand, Redux, Python} \\
+     \vspace{1mm}
+     \textbf{Backend}{: Express, MongoDB, PostgreSQL, Supabase, Prisma} \\
+     \vspace{1mm}
+     \textbf{Devops}{: AWS, Docker, GitHub Actions, Redis} \\
+     \vspace{1mm}
+     \textbf{AI \& Automation}{: OpenAI, Gemini, RAG, Gemini, n8n}
+    }}
+ \end{itemize}
+
+\end{document}
