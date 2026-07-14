@@ -65,6 +65,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               Source
             </a>
           )}
+          {project.links.githubApp && (
+            <a href={project.links.githubApp} target="_blank" rel="noopener noreferrer" className="link-pill">
+              <Github className="h-3.5 w-3.5" />
+              GitHub App
+            </a>
+          )}
           {project.links.showcase && (
             <a href={project.links.showcase} target="_blank" rel="noopener noreferrer" className="link-pill">
               <ExternalLink className="h-3.5 w-3.5" />

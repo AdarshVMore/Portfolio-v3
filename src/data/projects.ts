@@ -1,6 +1,7 @@
 export type ProjectLinks = {
   live?: string
   github?: string
+  githubApp?: string
   showcase?: string
 }
 
@@ -26,7 +27,7 @@ const projectBase = '/assets/projects'
 export const projects: Project[] = [
   {
     id: 'review-pilot',
-    title: 'ReviewPilot',
+    title: 'CodeRefyn',
     description:
       'An AI-powered GitHub code reviewer that automatically analyzes pull requests and posts review comments for bugs, code quality, performance, and maintainability improvements.',
     highlights: [
@@ -37,14 +38,19 @@ export const projects: Project[] = [
     links: {
       live: 'http://custom-ai-code-reviewer.vercel.app/',
       github: 'https://github.com/AdarshVMore/AI-Code-Reviewer',
+      githubApp: 'https://github.com/apps/coderefyn',
     },
     media: {
-      cover: `${projectBase}/review-pilot/cover.jpg`,
+      cover: `${projectBase}/review-pilot/screenshots/604722390-0f6223d2-eae3-4cb1-b95b-89559e605bcd.png`,
       screenshots: [
-        `${projectBase}/review-pilot/screenshots/01.jpg`,
-        `${projectBase}/review-pilot/screenshots/02.jpg`,
+        `${projectBase}/review-pilot/screenshots/604722390-0f6223d2-eae3-4cb1-b95b-89559e605bcd.png`,
+        `${projectBase}/review-pilot/screenshots/2.png`,
+        `${projectBase}/review-pilot/screenshots/3.png`,
+        `${projectBase}/review-pilot/screenshots/4.png`,
+        `${projectBase}/review-pilot/screenshots/5.png`,
+        `${projectBase}/review-pilot/screenshots/6.png`,
+        `${projectBase}/review-pilot/screenshots/7.png`,
       ],
-      demoVideo: `${projectBase}/review-pilot/demo.mp4`,
     },
     featured: true,
   },
@@ -66,16 +72,11 @@ export const projects: Project[] = [
     },
     media: {
       cover: `${projectBase}/relocate-ai/cover.jpg`,
-      screenshots: [
-        `${projectBase}/relocate-ai/screenshots/01.jpg`,
-        `${projectBase}/relocate-ai/screenshots/02.jpg`,
-      ],
-      demoVideo: `${projectBase}/relocate-ai/demo.mp4`,
+      screenshots: [],
+      demoVideo: 'https://youtu.be/ooou9zVlVJc?si=r0Zjr6R1PuwtZxzX',
     },
     featured: true,
   },
-  
-  
   {
     id: 'artquire',
     title: 'ArtQuire',
@@ -91,35 +92,14 @@ export const projects: Project[] = [
       github: 'https://github.com/AdarshVMore/ArtAquire-SocialMedia-DApp',
     },
     media: {
-      cover: `${projectBase}/artquire/cover.jpg`,
+      cover: `${projectBase}/artquire/screenshots/1.png`,
       screenshots: [
-        `${projectBase}/artquire/screenshots/01.jpg`,
-        `${projectBase}/artquire/screenshots/02.jpg`,
+        `${projectBase}/artquire/screenshots/1.png`,
+        `${projectBase}/artquire/screenshots/2.png`,
+        `${projectBase}/artquire/screenshots/3.png`,
+        `${projectBase}/artquire/screenshots/4.png`,
       ],
-      demoVideo: `${projectBase}/artquire/demo.mp4`,
-    },
-    featured: true,
-  },
-  {
-    id: 'vaanshika',
-    title: 'VaanShika',
-    description:
-      'A family tree management platform with real-time collaboration, secure communication, shared event calendars, and AWS S3 integration for document and photo storage.',
-    highlights: [
-      'Built collaborative family tree visualization with real-time updates.',
-      'Integrated AWS S3 for reliable document and photo storage.',
-    ],
-    tech: ['React', 'Node.js', 'MongoDB', 'AWS S3', 'WebSockets'],
-    links: {
-      github: 'https://github.com/AdarshVMore',
-    },
-    media: {
-      cover: `${projectBase}/vaanshika/cover.jpg`,
-      screenshots: [
-        `${projectBase}/vaanshika/screenshots/01.jpg`,
-        `${projectBase}/vaanshika/screenshots/02.jpg`,
-      ],
-      demoVideo: `${projectBase}/vaanshika/demo.mp4`,
+      demoVideo: 'https://youtu.be/3wKWwVUjiLw?si=2FrDcrqD0kF56k-R',
     },
     featured: true,
   },
@@ -137,8 +117,16 @@ export const projects: Project[] = [
       github: 'https://github.com/AdarshVMore/hospital_dapp',
     },
     media: {
-      cover: `${projectBase}/health-on-chain/cover.jpg`,
-      screenshots: [`${projectBase}/health-on-chain/screenshots/01.jpg`],
+      cover: `${projectBase}/health-on-chain/screenshots/1.png`,
+      screenshots: [
+        `${projectBase}/health-on-chain/screenshots/1.png`,
+        `${projectBase}/health-on-chain/screenshots/2.png`,
+        `${projectBase}/health-on-chain/screenshots/3.png`,
+        `${projectBase}/health-on-chain/screenshots/4.png`,
+        `${projectBase}/health-on-chain/screenshots/5.png`,
+        `${projectBase}/health-on-chain/screenshots/6.png`,
+        `${projectBase}/health-on-chain/screenshots/7.png`,
+      ],
     },
     featured: false,
   },
