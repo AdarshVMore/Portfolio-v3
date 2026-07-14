@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from 'lucide-react'
+import { CopyEmailButton } from '@/components/ui/CopyEmailButton'
 import { profile } from '@/data/profile'
 
 export function Footer() {
@@ -28,13 +29,12 @@ export function Footer() {
           >
             <Linkedin className="h-5 w-5" />
           </a>
-          <a
-            href={profile.socials.email}
-            className="text-muted-foreground transition hover:text-foreground"
+          <CopyEmailButton
             aria-label="Email"
+            className="text-muted-foreground transition hover:text-foreground"
           >
             <Mail className="h-5 w-5" />
-          </a>
+          </CopyEmailButton>
         </div>
       </div>
       <p className="mt-6 text-center text-xs text-muted-foreground">

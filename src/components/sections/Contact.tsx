@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Download, Github, Linkedin, Mail } from 'lucide-react'
+import { CopyEmailButton } from '@/components/ui/CopyEmailButton'
 import { profile } from '@/data/profile'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
@@ -18,13 +19,10 @@ export function Contact() {
           subtitle="Open to work and collaborations. Email or LinkedIn is best."
         />
         <div className="flex flex-wrap gap-3">
-          <a
-            href={profile.socials.email}
-            className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition hover:opacity-90"
-          >
+          <CopyEmailButton className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition hover:opacity-90">
             <Mail className="h-4 w-4" />
-            Send Email
-          </a>
+            Copy Email
+          </CopyEmailButton>
           <a
             href={profile.socials.linkedin}
             target="_blank"

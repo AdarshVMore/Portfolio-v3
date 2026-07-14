@@ -1,4 +1,5 @@
 import { Mail } from 'lucide-react'
+import { CopyEmailButton } from '@/components/ui/CopyEmailButton'
 import { profile } from '@/data/profile'
 import { PopReveal } from '@/components/ui/PopReveal'
 import { StreamingText } from '@/components/ui/StreamingText'
@@ -7,7 +8,7 @@ export function Hero() {
   const displayName = profile.name.split(' ')[0]
 
   return (
-    <section id="hero" className="mx-auto max-w-3xl min-w-0 px-5 pb-10 pt-12 md:px-8 md:pb-14 md:pt-16">
+    <section id="hero" className="mx-auto max-w-3xl min-w-0 px-5 pb-10 pt-12 md:px-8 md:pb-10 md:pt-16">
       <PopReveal immediate delay={0}>
         <div className="flex items-start justify-between gap-8">
           <div className="min-w-0 flex-1">
@@ -30,13 +31,10 @@ export function Hero() {
               delay={500}
               triggerOnView={false}
             />
-            <a
-              href={profile.socials.email}
-              className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground transition-opacity hover:opacity-70 md:text-base"
-            >
+            <CopyEmailButton className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground transition-opacity hover:opacity-70 md:text-base">
               <Mail className="h-4 w-4" strokeWidth={1.5} />
               {profile.email}
-            </a>
+            </CopyEmailButton>
           </div>
 
           <PopReveal immediate delay={120}>

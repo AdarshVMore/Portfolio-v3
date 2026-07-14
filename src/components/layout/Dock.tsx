@@ -1,4 +1,5 @@
 import { Download, Github, Home, Linkedin, Mail, Moon, Sun } from 'lucide-react'
+import { CopyEmailButton } from '@/components/ui/CopyEmailButton'
 import { profile } from '@/data/profile'
 import { useThemeToggle } from '@/hooks/useThemeToggle'
 
@@ -6,7 +7,6 @@ const dockItems = [
   { id: 'hero', icon: Home, label: 'Home', action: 'scroll' as const },
   { id: 'github', icon: Github, label: 'GitHub', href: profile.socials.github },
   { id: 'linkedin', icon: Linkedin, label: 'LinkedIn', href: profile.socials.linkedin },
-  { id: 'email', icon: Mail, label: 'Email', href: profile.socials.email },
   { id: 'resume', icon: Download, label: 'Resume', href: profile.resumePath, download: true },
 ]
 
@@ -50,6 +50,12 @@ export function Dock() {
             </a>
           )
         })}
+        <CopyEmailButton
+          aria-label="Email"
+          className="rounded-full p-2.5 text-foreground transition-opacity hover:opacity-60"
+        >
+          <Mail className="h-4 w-4" strokeWidth={1.75} />
+        </CopyEmailButton>
         <button
           type="button"
           onClick={toggleTheme}
