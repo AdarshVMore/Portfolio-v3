@@ -1,11 +1,86 @@
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import {
+  getYouTubeEmbedUrl,
+  getYouTubeId,
+  getYouTubeThumbnail,
+} from '@/lib/youtube'
 
 type ProjectMediaSliderProps = {
   title: string
   cover: string
   screenshots: string[]
   demoVideo?: string
+}
+
+type Slide =
+  | { type: 'image'; src: string }
+  | { type: 'youtube'; src: string; videoId: string }
+  | { type: 'video'; src: string }
+
+function buildSlides(screenshots: string[], demoVideo?: string): Slide[] {
+  const slides: Slide[] = []
+
+  if (demoVideo) {
+    const videoId = getYouTubeId(demoVideo)
+    if (videoId) {
+      slides.push({ type: 'youtube', src: demoVideo, videoId })
+    } else {
+      slides.push({ type: 'video', src: demoVideo })
+    }
+  }
+
+  for (const src of screenshots) {
+    slides.push({ type: 'image', src })
+  }
+
+  return slides
+}
+
+function PlayOverlay({ label }: { label: string }) {
+  return (
+    <span className="absolute inset-0 flex items-center justify-center bg-black/20">
+      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-foreground text-background">
+        <Play className="h-4 w-4 fill-current" strokeWidth={0} />
+      </span>
+      <span className="sr-only">{label}</span>
+    </span>
+  )
+}
+
+type YouTubePosterProps = {
+  videoId: string
+  cover: string
+  title: string
+  onPlay: () => void
+}
+
+function YouTubePoster({ videoId, cover, title, onPlay }: YouTubePosterProps) {
+  const [thumbnail, setThumbnail] = useState(() => getYouTubeThumbnail(videoId))
+
+  return (
+    <button
+      type="button"
+      onClick={onPlay}
+      className="relative h-full w-full"
+      aria-label={`Play ${title} demo`}
+    >
+      <img
+        src={thumbnail}
+        alt=""
+        className="h-full w-full object-cover"
+        onError={() => {
+          setThumbnail((current) => {
+            const hq = getYouTubeThumbnail(videoId, 'hq')
+            if (current !== hq) return hq
+            if (current !== cover) return cover
+            return current
+          })
+        }}
+      />
+      <PlayOverlay label={`Play ${title} demo`} />
+    </button>
+  )
 }
 
 export function ProjectMediaSlider({
@@ -17,12 +92,9 @@ export function ProjectMediaSlider({
   const videoRef = useRef<HTMLVideoElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
   const [index, setIndex] = useState(0)
-  const [playing, setPlaying] = useState(false)
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null)
 
-  const slides: { type: 'image' | 'video'; src: string }[] = [
-    ...screenshots.map((src) => ({ type: 'image' as const, src })),
-    ...(demoVideo ? [{ type: 'video' as const, src: demoVideo }] : []),
-  ]
+  const slides = buildSlides(screenshots, demoVideo)
 
   useEffect(() => {
     const track = trackRef.current
@@ -33,7 +105,7 @@ export function ProjectMediaSlider({
       if (!slideWidth) return
       const next = Math.round(track.scrollLeft / slideWidth)
       setIndex(next)
-      if (slides[next]?.type !== 'video') setPlaying(false)
+      setPlayingIndex((current) => (current !== null && current !== next ? null : current))
     }
 
     track.addEventListener('scroll', onScroll, { passive: true })
@@ -45,15 +117,15 @@ export function ProjectMediaSlider({
   const goTo = (next: number) => {
     const clamped = Math.max(0, Math.min(next, slides.length - 1))
     setIndex(clamped)
-    setPlaying(false)
+    setPlayingIndex(null)
     const track = trackRef.current
     if (!track) return
     track.scrollTo({ left: clamped * track.clientWidth, behavior: 'smooth' })
   }
 
-  const playVideo = (slideIndex: number) => {
+  const playSlide = (slideIndex: number) => {
     setIndex(slideIndex)
-    setPlaying(true)
+    setPlayingIndex(slideIndex)
     requestAnimationFrame(() => {
       void videoRef.current?.play()
     })
@@ -64,8 +136,25 @@ export function ProjectMediaSlider({
       <div ref={trackRef} className="media-slider-track">
         {slides.map((slide, i) => (
           <div key={`${slide.type}-${slide.src}-${i}`} className="media-slider-slide">
-            {slide.type === 'video' ? (
-              playing && index === i ? (
+            {slide.type === 'youtube' ? (
+              playingIndex === i ? (
+                <iframe
+                  src={getYouTubeEmbedUrl(slide.videoId, true)}
+                  title={`${title} demo`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-full w-full border-0"
+                />
+              ) : (
+                <YouTubePoster
+                  videoId={slide.videoId}
+                  cover={cover}
+                  title={title}
+                  onPlay={() => playSlide(i)}
+                />
+              )
+            ) : slide.type === 'video' ? (
+              playingIndex === i ? (
                 <video
                   ref={videoRef}
                   src={slide.src}
@@ -78,8 +167,8 @@ export function ProjectMediaSlider({
               ) : (
                 <button
                   type="button"
-                  onClick={() => playVideo(i)}
-                  className="group relative h-full w-full"
+                  onClick={() => playSlide(i)}
+                  className="relative h-full w-full"
                   aria-label={`Play ${title} demo`}
                 >
                   <img
@@ -90,18 +179,14 @@ export function ProjectMediaSlider({
                       ;(e.target as HTMLImageElement).style.display = 'none'
                     }}
                   />
-                  <span className="absolute inset-0 flex items-center justify-center bg-black/20">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-foreground text-background">
-                      <Play className="h-4 w-4 fill-current" strokeWidth={0} />
-                    </span>
-                  </span>
+                  <PlayOverlay label={`Play ${title} demo`} />
                 </button>
               )
             ) : (
               <img
                 src={slide.src}
                 alt={`${title} screenshot ${i + 1}`}
-                className="h-full w-full object-cover"
+                className="max-h-full max-w-full object-contain"
                 onError={(e) => {
                   ;(e.target as HTMLImageElement).style.display = 'none'
                 }}
