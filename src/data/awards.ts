@@ -7,6 +7,8 @@ export type Award = {
   location?: string
   links?: { label: string; url: string }[]
   logo?: string
+  logoClass?: string
+  logoNodeClass?: string
 }
 
 export type Leadership = {
@@ -28,6 +30,7 @@ export const awards: Award[] = [
     date: '2025',
     location: 'India',
     logo: `${imageBase}/codebits_3.0_logo.webp`,
+    logoNodeClass: 'roadmap-node--black-bg',
     links: [{ label: 'GitHub', url: 'https://github.com/AdarshVMore/RelocateAI' }],
   },
   {
@@ -59,17 +62,17 @@ export const awards: Award[] = [
 
 export const leadership: Leadership[] = [
   {
-    id: 'ascee',
-    role: 'President',
-    organization: 'ASCEE Club',
-    period: 'June 2023 — June 2024',
-    logo: `${imageBase}/ASCEE_club_logo.jpg`,
-  },
-  {
     id: 'gdsc',
     role: 'Lead',
     organization: 'Google Developer Students Club',
     period: 'June 2023 — June 2024',
     logo: `${imageBase}/google_students_developer_club_logo.png`,
+  },
+  {
+    id: 'ascee',
+    role: 'President',
+    organization: 'ASCEE Club',
+    period: 'June 2023 — June 2024',
+    logo: `${imageBase}/ASCEE_club_logo.jpg`,
   },
 ]

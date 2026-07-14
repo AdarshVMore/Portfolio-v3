@@ -51,7 +51,7 @@ export function Education() {
             </div>
             <div className="roadmap-node shrink-0">
               {education.logo ? (
-                <img src={education.logo} alt={education.institution} className="org-logo-img" />
+                <img src={education.logo} alt={education.institution} className="org-logo-img h-50 w-50" />
               ) : (
                 education.institution.charAt(0)
               )}

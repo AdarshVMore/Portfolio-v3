@@ -11,6 +11,8 @@ export type RoadmapEntry = {
   bullets?: string[]
   badge: string
   logo?: string
+  logoClass?: string
+  logoNodeClass?: string
   footer?: ReactNode
 }
 
@@ -30,9 +32,13 @@ export function Roadmap({ entries, stagger = 90 }: RoadmapProps) {
           <PopReveal key={entry.id} delay={index * stagger}>
             <article className="roadmap-entry">
               <div className="roadmap-rail" aria-hidden>
-                <div className="roadmap-node">
+                <div className={`roadmap-node ${entry.logoNodeClass ?? ''}`}>
                   {entry.logo ? (
-                    <img src={entry.logo} alt="" className="org-logo-img" />
+                    <img
+                      src={entry.logo}
+                      alt=""
+                      className={`org-logo-img ${entry.logoClass ?? ''}`.trim()}
+                    />
                   ) : (
                     entry.badge
                   )}

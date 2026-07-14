@@ -7,6 +7,8 @@ export type Experience = {
   endDate: string
   highlights: string[]
   logo?: string
+  logoClass?: string
+  logoNodeClass?: string
 }
 
 const imageBase = '/images'
@@ -20,7 +22,7 @@ export const experience: Experience[] = [
     startDate: 'June 2025',
     endDate: 'March 2026',
     highlights: [
-      'Led Capturely — a live virtual photoshoot app with concurrent sessions (React Native, LiveKit, WebRTC).',
+      'Led Capturely, a live virtual photoshoot app with concurrent sessions using React Native, LiveKit, and WebRTC.',
       'Built Therhappi frontend: patient & therapist flows, bookings, records, and payments.',
     ],
     logo: `${imageBase}/ellenox_logo.jpeg`,
@@ -33,7 +35,7 @@ export const experience: Experience[] = [
     startDate: 'Feb 2025',
     endDate: 'April 2025',
     highlights: [
-      'Worked on an AI networking platform — profile scoring, faster page loads.',
+      'Worked on an AI networking platform, profile scoring, and faster page loads.',
       'Moved the backend to microservices, shipped with Docker and GitHub Actions.',
       'Built 10+ Next.js pages from Figma designs.',
     ],
@@ -47,11 +49,12 @@ export const experience: Experience[] = [
     startDate: 'April 2023',
     endDate: 'October 2024',
     highlights: [
-      'Shipped the DeFi product — 1,000+ users, $20K+ in token sales on Polygon.',
+      'Shipped the DeFi product, 1,000+ users, $20K+ in token sales on Polygon.',
       'Built staking, vesting, and token sale dashboards plus the Solidity contracts behind them.',
       'Audited smart contracts for the LOI pre-IEO on Hardhat.',
     ],
     logo: `${imageBase}/loop_of_infinity_logo.png`,
+    logoClass: 'org-logo-img--banner',
   },
   {
     id: 'fliperb',
@@ -61,7 +64,7 @@ export const experience: Experience[] = [
     startDate: 'December 2023',
     endDate: 'January 2024',
     highlights: [
-      'Led a team of 5 on a MERN e-commerce site — Stripe, referrals, SEO.',
+      'Led a team of 5 on a MERN e-commerce site, Stripe, referrals, SEO.',
       'Dockerized and deployed on AWS.',
     ],
     logo: `${imageBase}/fliperb_lifestyle_logo.jpeg`,

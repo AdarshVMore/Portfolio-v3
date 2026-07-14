@@ -12,6 +12,8 @@ export function Experience() {
     bullets: job.highlights,
     badge: job.company.charAt(0),
     logo: job.logo,
+    logoClass: job.logoClass,
+    logoNodeClass: job.logoNodeClass,
   }))
 
   return (

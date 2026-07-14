@@ -14,6 +14,8 @@ export function Awards() {
     description: `${award.result} — ${award.project}`,
     badge: award.title.charAt(0),
     logo: award.logo,
+    logoClass: award.logoClass,
+    logoNodeClass: award.logoNodeClass,
     footer:
       award.links && award.links.length > 0 ? (
         <div className="mt-3 flex flex-wrap gap-3">
