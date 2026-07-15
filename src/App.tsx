@@ -9,7 +9,7 @@ import { Education } from '@/components/sections/Education'
 
 function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background pb-28 text-foreground">
+    <div className="min-h-screen overflow-x-hidden bg-background pt-10 pb-28 text-foreground">
       <main className="min-w-0 overflow-x-hidden">
         <Hero />
         <About />

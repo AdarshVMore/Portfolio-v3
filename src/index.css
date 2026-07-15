@@ -13,8 +13,8 @@
 :root {
   --bg: #ffffff;
   --fg: #0a0a0a;
-  --muted: #f5f5f5;
-  --muted-fg: #737373;
+  --muted: #888888;
+  --muted-fg: #3a3a3a;
   --pill-bg: #0a0a0a;
   --pill-fg: #ffffff;
   --link-pill-bg: #e5e5e5;
@@ -28,7 +28,7 @@
   --bg: #000000;
   --fg: #fafafa;
   --muted: #111111;
-  --muted-fg: #888888;
+  --muted-fg: #cdcdcd;
   --pill-bg: #ffffff;
   --pill-fg: #000000;
   --link-pill-bg: #2a2a2a;
@@ -59,6 +59,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a[href],
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 ::selection {
   background-color: rgba(255, 255, 255, 0.2);
   color: var(--fg);
@@ -79,7 +84,7 @@ section {
 .pill-tag {
   display: inline-flex;
   align-items: center;
-  border-radius: 9999px;
+  border-radius: 8px;
   background: var(--pill-bg);
   color: var(--pill-fg);
   padding: 0.35rem 0.85rem;
@@ -93,7 +98,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  border-radius: 9999px;
+  border-radius: 8px;
   background: var(--link-pill-bg);
   color: var(--link-pill-fg);
   padding: 0.4rem 0.9rem;
@@ -109,7 +114,7 @@ section {
 
 .section-badge {
   display: inline-block;
-  border-radius: 9999px;
+  border-radius: 8px;
   background: var(--pill-bg);
   color: var(--pill-fg);
   padding: 0.3rem 0.9rem;
@@ -123,6 +128,33 @@ section {
   border: 1px solid var(--dock-border);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+}
+
+.toast-viewport {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 5.5rem;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  padding-inline: 1rem;
+  pointer-events: none;
+}
+
+.toast-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--pill-fg) 12%, transparent);
+  background: var(--pill-bg);
+  color: var(--pill-fg);
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.2;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--pill-bg) 40%, transparent);
 }
 
 .viewport-stream-mask {
@@ -161,8 +193,8 @@ section {
 
 .roadmap-node {
   display: flex;
-  height: 3.25rem;
-  width: 3.25rem;
+  height: 3.5rem;
+  width: 3.5rem;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -176,11 +208,22 @@ section {
 }
 
 .org-logo-img {
-  height: 100%;
-  width: 100%;
+  height: 50px;
+  width: 50px;
   border-radius: inherit;
   object-fit: cover;
   transform: scale(1);
+}
+
+.org-logo-img--banner {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: unset;
+}
+
+.roadmap-node--black-bg {
+  background: #000;
 }
 
 .roadmap-spine {
@@ -218,10 +261,12 @@ section {
 
 .media-slider {
   position: relative;
+  aspect-ratio: 16 / 9;
 }
 
 .media-slider-track {
   display: flex;
+  height: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -236,8 +281,11 @@ section {
 }
 
 .media-slider-slide {
-  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 100%;
+  height: 100%;
   flex-shrink: 0;
   scroll-snap-align: start;
   overflow: hidden;

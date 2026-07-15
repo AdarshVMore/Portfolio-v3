@@ -10,7 +10,7 @@ export function Projects() {
         <SectionHeader
           badge="Projects"
           title="Things I've built"
-          subtitle="A few recent ones — click through for demos and code."
+          subtitle="A few recent ones, click through for demos and code links."
         />
       </PopReveal>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-8 md:gap-y-12">
