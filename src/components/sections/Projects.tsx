@@ -5,7 +5,10 @@ import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-3xl min-w-0 px-5 py-10 md:px-8 md:py-12">
+    <section
+      id="projects"
+      className="mx-auto max-w-3xl min-w-0 px-5 py-10 md:px-8 md:py-12 min-[1800px]:max-w-5xl"
+    >
       <PopReveal>
         <SectionHeader
           badge="Projects"

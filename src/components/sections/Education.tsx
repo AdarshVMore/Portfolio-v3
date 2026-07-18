@@ -4,7 +4,10 @@ import { StreamingText } from '@/components/ui/StreamingText'
 
 export function Education() {
   return (
-    <section id="education" className="mx-auto max-w-3xl min-w-0 px-5 py-10 md:px-8 md:py-12">
+    <section
+      id="education"
+      className="mx-auto max-w-3xl min-w-0 px-5 py-10 md:px-8 md:py-12 min-[1800px]:max-w-5xl"
+    >
       <PopReveal>
         <h2 className="mb-6 text-2xl font-semibold md:text-3xl">
           <StreamingText text="Education" as="span" unit="char" stagger={20} blur={8} />
