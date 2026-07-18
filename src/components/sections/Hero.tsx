@@ -8,10 +8,13 @@ export function Hero() {
   const displayName = profile.name.split(' ')[0]
 
   return (
-    <section id="hero" className="mx-auto max-w-3xl min-w-0 px-5 pb-10 pt-12 md:px-8 md:pb-10 md:pt-16">
+    <section
+      id="hero"
+      className="mx-auto max-w-3xl min-w-0 px-5 pb-10 pt-12 md:px-8 md:pb-10 md:pt-16 min-[1800px]:max-w-5xl"
+    >
       <PopReveal immediate delay={0}>
-        <div className="flex items-start justify-between gap-8">
-          <div className="min-w-0 flex-1">
+        <div className="flex flex-col items-start gap-6 md:flex-row md:justify-between md:gap-8">
+          <div className="order-2 w-full min-w-0 md:order-1 md:flex-1">
             <h1 className="text-[2rem] font-bold leading-tight tracking-tight md:text-7xl">
               <StreamingText
                 text={`Hi, I'm ${displayName}`}
@@ -37,7 +40,7 @@ export function Hero() {
             </CopyEmailButton>
           </div>
 
-          <PopReveal immediate delay={120}>
+          <PopReveal immediate delay={120} className="order-1 md:order-2">
             <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full bg-muted md:h-40 md:w-40">
               <img
                 src={profile.imagePath}
