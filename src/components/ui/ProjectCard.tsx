@@ -16,7 +16,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     project.media.screenshots.length > 0 || Boolean(project.media.demoVideo)
 
   return (
-    <PopReveal delay={baseDelay}>
+    <PopReveal delay={baseDelay} className="min-w-0 max-w-full overflow-hidden">
       <article className="min-w-0 space-y-3">
         <h3 className="text-lg font-semibold md:text-xl">
           <StreamingText

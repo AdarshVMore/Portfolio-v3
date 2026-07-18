@@ -1,10 +1,6 @@
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import {
-  getYouTubeEmbedUrl,
-  getYouTubeId,
-  getYouTubeThumbnail,
-} from '@/lib/youtube'
+import { getYouTubeEmbedUrl, getYouTubeId } from '@/lib/youtube'
 
 type ProjectMediaSliderProps = {
   title: string
@@ -49,33 +45,25 @@ function PlayOverlay({ label }: { label: string }) {
 }
 
 type YouTubePosterProps = {
-  videoId: string
   cover: string
   title: string
   onPlay: () => void
 }
 
-function YouTubePoster({ videoId, cover, title, onPlay }: YouTubePosterProps) {
-  const [thumbnail, setThumbnail] = useState(() => getYouTubeThumbnail(videoId))
-
+function YouTubePoster({ cover, title, onPlay }: YouTubePosterProps) {
   return (
     <button
       type="button"
       onClick={onPlay}
-      className="relative h-full w-full"
+      className="relative h-full w-full overflow-hidden bg-black"
       aria-label={`Play ${title} demo`}
     >
       <img
-        src={thumbnail}
+        src={cover}
         alt=""
-        className="h-full w-full object-cover"
-        onError={() => {
-          setThumbnail((current) => {
-            const hq = getYouTubeThumbnail(videoId, 'hq')
-            if (current !== hq) return hq
-            if (current !== cover) return cover
-            return current
-          })
+        className="block h-full w-full object-contain object-center"
+        onError={(e) => {
+          ;(e.target as HTMLImageElement).style.display = 'none'
         }}
       />
       <PlayOverlay label={`Play ${title} demo`} />
@@ -147,7 +135,6 @@ export function ProjectMediaSlider({
                 />
               ) : (
                 <YouTubePoster
-                  videoId={slide.videoId}
                   cover={cover}
                   title={title}
                   onPlay={() => playSlide(i)}
@@ -168,13 +155,13 @@ export function ProjectMediaSlider({
                 <button
                   type="button"
                   onClick={() => playSlide(i)}
-                  className="relative h-full w-full"
+                  className="relative h-full w-full overflow-hidden bg-black"
                   aria-label={`Play ${title} demo`}
                 >
                   <img
                     src={cover}
                     alt=""
-                    className="h-full w-full object-cover opacity-85"
+                    className="block h-full w-full object-contain object-center opacity-85"
                     onError={(e) => {
                       ;(e.target as HTMLImageElement).style.display = 'none'
                     }}

@@ -261,11 +261,16 @@ section {
 
 .media-slider {
   position: relative;
+  width: 100%;
+  min-width: 0;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 
 .media-slider-track {
   display: flex;
+  width: 100%;
+  min-width: 0;
   height: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -284,9 +289,10 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 100%;
+  width: 100%;
+  min-width: 0;
   height: 100%;
-  flex-shrink: 0;
+  flex: 0 0 100%;
   scroll-snap-align: start;
   overflow: hidden;
 }

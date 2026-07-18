@@ -31,9 +31,9 @@ export function isYouTubeUrl(url: string): boolean {
 
 export function getYouTubeThumbnail(
   videoId: string,
-  quality: 'maxres' | 'hq' = 'maxres',
+  quality: 'maxres' | 'mq' = 'maxres',
 ): string {
-  const file = quality === 'maxres' ? 'maxresdefault.jpg' : 'hqdefault.jpg'
+  const file = quality === 'maxres' ? 'maxresdefault.jpg' : 'mqdefault.jpg'
   return `https://img.youtube.com/vi/${videoId}/${file}`
 }
 
