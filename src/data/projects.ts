@@ -26,6 +26,30 @@ const projectBase = '/assets/projects'
 
 export const projects: Project[] = [
   {
+    id: 'whiterock',
+    title: 'WhiteRock',
+    description:
+      'A paper perpetual futures exchange with limit/market orders, leverage, margin locking, PnL tracking, and auto-liquidation against live Binance index prices.',
+    highlights: [
+      'Implemented an event-driven trading pipeline with a custom in-memory matching engine, Redis Streams/Pub/Sub workers, and WebSocket fanout for live order book, trades, and positions.',
+      'Designed a real-time trading UI with candlestick charts and depth views; containerized and deployed with Docker, Vercel, and Render using Neon Postgres and Upstash Redis.',
+    ],
+    tech: ['React', 'TypeScript', 'Node.js', 'Redis', 'PostgreSQL', 'Docker'],
+    links: {
+      live: 'https://perpetual-trading-full-stack-fronte.vercel.app/',
+      github: 'https://github.com/AdarshVMore/Perpetual-Trading-FullStack',
+    },
+    media: {
+      cover: `${projectBase}/whiterock/screenshots/1.webp`,
+      screenshots: [
+        `${projectBase}/whiterock/screenshots/1.webp`,
+        `${projectBase}/whiterock/screenshots/2.png`,
+      ],
+      demoVideo: 'https://www.youtube.com/watch?v=I6Aqacb7VH0',
+    },
+    featured: true,
+  },
+  {
     id: 'review-pilot',
     title: 'CodeRefyn',
     description:
@@ -71,8 +95,15 @@ export const projects: Project[] = [
       github: 'https://github.com/AdarshVMore/RelocateAI',
     },
     media: {
-      cover: `${projectBase}/relocate-ai/cover.jpg`,
-      screenshots: [],
+      cover: `${projectBase}/relocate-ai/screenshots/1.png`,
+      screenshots: [
+        `${projectBase}/relocate-ai/screenshots/1.png`,
+        `${projectBase}/relocate-ai/screenshots/2.png`,
+        `${projectBase}/relocate-ai/screenshots/3.png`,
+        `${projectBase}/relocate-ai/screenshots/4.png`,
+        `${projectBase}/relocate-ai/screenshots/5.png`,
+        `${projectBase}/relocate-ai/screenshots/6.png`,
+      ],
       demoVideo: 'https://youtu.be/ooou9zVlVJc?si=r0Zjr6R1PuwtZxzX',
     },
     featured: true,
